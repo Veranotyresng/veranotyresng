@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verano Tyres Nigeria — Built for Nigerian Roads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0E0E0E;
+      color: #FFF;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    /* Header / Nav */
+    .top-bar {
+      background: #CC0000;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-size: 12px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background: #181818;
+      border-bottom: 1px solid #333;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .logo span {
+      color: #CC0000;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #CCC;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #CC0000;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #1A1A1A 0%, #0E0E0E 100%);
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: #CC0000;
+    }
+
+    .hero p {
+      color: #888;
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .badge-group {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: #242424;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .badge .emoji {
+      font-size: 28px;
+    }
+
+    .badge .title {
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .badge .desc {
+      font-size: 11px;
+      color: #888;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .product-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: #CC0000;
+    }
+
+    .product-size {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #CC0000;
+      margin-bottom: 8px;
+    }
+
+    .product-vehicle {
+      color: #AAA;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .product-price {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 12px 0;
+    }
+
+    .product-price small {
+      font-size: 12px;
+      font-weight: 400;
+      color: #888;
+    }
+
+    .product-stock {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .in-stock {
+      background: rgba(14, 138, 90, 0.2);
+      color: #4CE0A0;
+    }
+
+    .out-of-stock {
+      background: rgba(204, 0, 0, 0.2);
+      color: #FF8080;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #CC0000;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 12px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #CC0000;
+      color: #CC0000;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .feature {
+      padding: 20px;
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .feature-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      font-size: 12px;
+      color: #888;
+    }
+
+    footer {
+      background: #181818;
+      border-top: 1px solid #333;
+      padding: 40px 20px;
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #888;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+      .badge-group {
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    🚚 Free delivery within Lagos Island & Mainland | ⚡ Same-day dispatch before 12:30 PM | 📞 Call us: +234 916 702 7854
+  </div>
+
+  <nav>
+    <div class="logo">VER<span>A</span>NO</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Tyres</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="/admin" style="color:#CC0000;">Admin</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Built for <span>Nigerian Roads.</span><br>Trusted by Drivers.</h1>
+    <p>Premium tyres for Toyota, BMW, Honda, Prado and more. Delivered same day across Lagos. Every tyre QR-verified and warranty-backed.</p>
+    <div class="badge-group">
+      <div class="badge"><div class="emoji">🛡️</div><div class="title">SONCAP Certified</div><div class="desc">Standards-approved for Nigeria</div></div>
+      <div class="badge"><div class="emoji">📦</div><div class="title">Free Lagos Delivery</div><div class="desc">Same-day before 12:30 PM</div></div>
+      <div class="badge"><div class="emoji">🔏</div><div class="title">QR Authenticated</div><div class="desc">Scan to verify genuine Verano</div></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">Our Tyre Range</h2>
+    <div class="product-grid" id="productGrid">
+      <div class="loading">Loading tyres from live inventory...</div>
+    </div>
+
+    <div class="features">
+      <div class="feature"><div class="feature-icon">🛡️</div><div class="feature-title">SONCAP Certified</div><div class="feature-desc">Every tyre meets Nigeria's Standards Organisation requirements.</div></div>
+      <div class="feature"><div class="feature-icon">📱</div><div class="feature-title">QR Anti-Counterfeit</div><div class="feature-desc">Scan the QR on every tyre to verify authenticity instantly.</div></div>
+      <div class="feature"><div class="feature-icon">🔧</div><div class="feature-title">12-Month Warranty</div><div class="feature-desc">Manufacturing defects covered for 12 months from purchase.</div></div>
+      <div class="feature"><div class="feature-icon">🚚</div><div class="feature-title">Same-Day Lagos</div><div class="feature-desc">Order before 12:30 PM, dispatch same day. Island & Mainland covered.</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <p><span style="color:#CC0000; font-weight:700;">VERANO</span> · Portside Auto Trading FZE · SONCAP Certified · ADGM UAE · Est. 2026</p>
+    <p style="margin-top: 12px;">© 2026 Verano Tyres Nigeria. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // REPLACE THIS URL WITH YOUR PUBLISHED GOOGLE SHEET CSV LINK
+    const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT3UxYzXxXxXxXxXx/pub?output=csv';
+
+    async function loadTyres() {
+      const productGrid = document.getElementById('productGrid');
+      productGrid.innerHTML = '<div class="loading">Loading tyres from live inventory...</div>';
+      
+      try {
+        const response = await fetch(GOOGLE_SHEET_CSV_URL + '?t=' + new Date().getTime()); // Cache-busting
+        const csvText = await response.text();
+        
+        // Parse CSV
+        const rows = csvText.trim().split('\n');
+        const headers = rows[0].split(',').map(h => h.trim().replace(/"/g, ''));
+        
+        const products = [];
+        for (let i = 1; i < rows.length; i++) {
+          const values = rows[i].split(',').map(v => v.trim().replace(/"/g, ''));
+          if (values.length === headers.length && values[0]) {
+            const product = {};
+            headers.forEach((h, idx) => { product[h] = values[idx]; });
+            products.push(product);
+          }
+        }
+        
+        if (products.length === 0) {
+          productGrid.innerHTML = '<div class="loading">No products found. Please check your Google Sheet.</div>';
+          return;
+        }
+        
+        // Render products
+        productGrid.innerHTML = products.map(p => `
+          <div class="product-card">
+            <div class="product-size">${p.size || 'N/A'}</div>
+            <div class="product-vehicle">${p.vehicle || 'N/A'}</div>
+            <div class="product-stock ${p.stock_status === 'in_stock' ? 'in-stock' : 'out-of-stock'}">${p.stock_status === 'in_stock' ? '✓ In Stock' : '✗ Out of Stock'}</div>
+            <div class="product-price">₦${parseInt(p.price || 0).toLocaleString()}<small>/tyre</small></div>
+            <div class="product-vehicle" style="font-size:12px;">${p.description || ''}</div>
+            <a href="#" class="btn ${p.stock_status === 'in_stock' ? '' : 'btn-outline'}" style="${p.stock_status !== 'in_stock' ? 'opacity:0.5; pointer-events:none;' : ''}">Order Now →</a>
+          </div>
+        `).join('');
+        
+      } catch (error) {
+        console.error('Error loading tyres:', error);
+        productGrid.innerHTML = '<div class="loading">⚠️ Unable to load inventory. Please try again later.</div>';
+      }
+    }
+    
+    loadTyres();
+  </script>
+</body>
+</html>

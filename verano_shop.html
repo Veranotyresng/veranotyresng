@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Verano Tyres Nigeria — Premium tyres for Toyota, BMW, Honda, Prado and more. Free delivery in Lagos. SONCAP certified. Shop 205/55R16, 265/65R17, 245/45R18.">
+<meta name="keywords" content="tyres Nigeria, buy tyres Lagos, Verano tyres, 265/65R17, Prado tyres, Corolla tyres, premium tyres Nigeria">
+<title>Verano Tyres Nigeria — Protection & Progress</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   BRAND TOKENS
+═══════════════════════════════════════════════════ */
+:root {
+  --red:      #CC0000;
+  --red-d:    #990000;
+  --red-l:    #FF1A1A;
+  --black:    #0D0D0D;
+  --black-s:  #161616;
+  --gray-9:   #1C1C1C;
+  --gray-8:   #2A2A2A;
+  --gray-7:   #3D3D3D;
+  --gray-5:   #666;
+  --gray-3:   #AAA;
+  --gray-1:   #E8E8E8;
+  --white:    #FFFFFF;
+  --steel:    #787878;
+  --gold:     #C8960C;
+  --font-d:   'Barlow Condensed', sans-serif;
+  --font-b:   'Barlow', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-b);
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════════
+   TOP BAR
+═══════════════════════════════════════════════════ */
+.topbar {
+  background: var(--red);
+  padding: 8px 0;
+  text-align: center;
+  font-family: var(--font-d);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--white);
+}
+.topbar span { opacity: .75; margin: 0 16px; }
+
+/* ═══════════════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════════════ */
+.header {
+  background: var(--black);
+  border-bottom: 1px solid var(--gray-8);
+  position: sticky; top: 0; z-index: 100;
+}
+.header-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 32px;
+  display: flex; align-items: center;
+  height: 68px; gap: 24px;
+}
+.logo {
+  font-family: var(--font-d);
+  font-weight: 900; font-size: 30px;
+  letter-spacing: .12em;
+  color: var(--white);
+  text-decoration: none;
+  flex-shrink: 0;
+  display: flex; align-items: center; gap: 10px;
+}
+.logo-mark {
+  width: 36px; height: 36px;
+  background: var(--red);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 900; color: var(--white);
+  flex-shrink: 0;
+}
+.logo span { color: var(--red); }
+
+.header-search {
+  flex: 1; max-width: 480px;
+  display: flex;
+  background: var(--gray-9);
+  border: 1px solid var(--gray-7);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.header-search input {
+  flex: 1; background: none; border: none;
+  padding: 10px 16px;
+  font-family: var(--font-b); font-size: 14px;
+  color: var(--white); outline: none;
+}
+.header-search input::placeholder { color: var(--gray-5); }
+.header-search button {
+  background: var(--red); border: none;
+  padding: 0 18px; cursor: pointer;
+  color: var(--white); font-size: 16px;
+  transition: background .15s;
+}
+.header-search button:hover { background: var(--red-d); }
+
+.header-nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.header-nav a {
+  font-size: 13px; font-weight: 500;
+  color: var(--gray-3); text-decoration: none;
+  padding: 8px 12px; border-radius: 4px;
+  transition: color .12s, background .12s;
+  white-space: nowrap;
+}
+.header-nav a:hover { color: var(--white); background: var(--gray-8); }
+.header-nav .cta {
+  background: var(--red); color: var(--white);
+  padding: 8px 18px; border-radius: 5px;
+  font-weight: 600;
+}
+.header-nav .cta:hover { background: var(--red-d); }
+
+/* ═══════════════════════════════════════════════════
+   SUB NAV — category links
+═══════════════════════════════════════════════════ */
+.subnav {
+  background: var(--gray-9);
+  border-bottom: 1px solid var(--gray-8);
+}
+.subnav-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 32px;
+  display: flex; gap: 0; overflow-x: auto;
+}
+.subnav a {
+  font-family: var(--font-d);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--gray-3); text-decoration: none;
+  padding: 11px 18px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color .12s, border-color .12s;
+  text-transform: uppercase;
+}
+.subnav a:hover, .subnav a.active {
+  color: var(--white);
+  border-bottom-color: var(--red);
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════ */
+.hero {
+  background: var(--black);
+  position: relative; overflow: hidden;
+  padding: 80px 0 0;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 50%, rgba(204,0,0,.12) 0%, transparent 70%),
+    repeating-linear-gradient(-55deg, transparent, transparent 40px, rgba(255,255,255,.012) 40px, rgba(255,255,255,.012) 41px);
+}
+.hero-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 32px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(204,0,0,.15);
+  border: 1px solid rgba(204,0,0,.3);
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-family: var(--font-d);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #FF6B6B;
+  margin-bottom: 24px;
+}
+.hero-badge::before { content: '●'; font-size: 8px; animation: blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.hero h1 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(52px, 6vw, 80px);
+  line-height: .95;
+  letter-spacing: -.01em;
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--red);
+  display: block;
+}
+.hero p {
+  font-size: 17px; line-height: 1.6;
+  color: var(--gray-3);
+  max-width: 420px;
+  margin-bottom: 36px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--red); color: var(--white);
+  border: none; padding: 14px 28px;
+  font-family: var(--font-d); font-weight: 700;
+  font-size: 15px; letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 6px; cursor: pointer;
+  text-decoration: none;
+  transition: background .15s, transform .15s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--red-d); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--gray-7);
+  color: var(--gray-1); padding: 14px 28px;
+  font-family: var(--font-d); font-weight: 600;
+  font-size: 15px; letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 6px; cursor: pointer;
+  text-decoration: none;
+  transition: border-color .15s, color .15s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-ghost:hover { border-color: var(--gray-3); color: var(--white); }
+
+/* Hero trust badges */
+.hero-trust {
+  display: flex; gap: 24px; margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--gray-8);
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--gray-3);
+}
+.trust-icon {
+  width: 36px; height: 36px;
+  background: var(--gray-9);
+  border: 1px solid var(--gray-7);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+.trust-item b { display: block; color: var(--white); font-size: 13px; }
+
+/* Hero visual side */
+.hero-visual {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 0 80px;
+}
+.hero-tyre {
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, #3D3D3D 0%, #0D0D0D 60%),
+    conic-gradient(from 0deg, #222 0%, #111 25%, #2a2a2a 50%, #111 75%, #222 100%);
+  border: 28px solid #1a1a1a;
+  box-shadow:
+    inset 0 0 60px rgba(0,0,0,.8),
+    0 0 80px rgba(204,0,0,.2),
+    0 40px 80px rgba(0,0,0,.6);
+  position: relative;
+  animation: spin 12s linear infinite;
+}
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+.hero-tyre::after {
+  content: 'VERANO';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: var(--font-d);
+  font-weight: 900; font-size: 22px;
+  letter-spacing: .2em;
+  color: var(--red);
+  text-shadow: 0 0 20px rgba(204,0,0,.5);
+  animation: counter-spin 12s linear infinite;
+}
+@keyframes counter-spin { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(-360deg)} }
+.hero-tyre-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(204,0,0,.2);
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+@keyframes pulse-ring { 0%,100%{opacity:.3;transform:scale(1)} 50%{opacity:.7;transform:scale(1.03)} }
+
+.hero-specs {
+  position: absolute; right: 0;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.spec-pill {
+  background: var(--gray-9);
+  border: 1px solid var(--gray-7);
+  border-left: 3px solid var(--red);
+  padding: 8px 14px;
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-d);
+  font-weight: 700; font-size: 14px;
+  color: var(--white);
+  letter-spacing: .04em;
+}
+.spec-pill small { display: block; font-weight: 400; font-size: 11px; color: var(--gray-5); margin-top: 1px; }
+
+/* ═══════════════════════════════════════════════════
+   TYRE FINDER
+═══════════════════════════════════════════════════ */
+.finder {
+  background: var(--gray-9);
+  border-top: 3px solid var(--red);
+  border-bottom: 1px solid var(--gray-8);
+}
+.finder-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 40px 32px;
+}
+.finder h2 {
+  font-family: var(--font-d);
+  font-weight: 800; font-size: 28px;
+  letter-spacing: .04em; margin-bottom: 8px;
+}
+.finder h2 span { color: var(--red); }
+.finder p { color: var(--gray-3); font-size: 14px; margin-bottom: 28px; }
+
+.finder-tabs {
+  display: flex; gap: 0;
+  border: 1px solid var(--gray-7);
+  border-radius: 6px; overflow: hidden;
+  width: fit-content; margin-bottom: 24px;
+}
+.finder-tab {
+  background: none; border: none;
+  padding: 9px 20px;
+  font-family: var(--font-b); font-size: 13px; font-weight: 500;
+  color: var(--gray-3); cursor: pointer;
+  border-right: 1px solid var(--gray-7);
+  transition: background .12s, color .12s;
+}
+.finder-tab:last-child { border-right: none; }
+.finder-tab.active { background: var(--red); color: var(--white); }
+
+.finder-form {
+  display: grid; grid-template-columns: repeat(4, 1fr) auto;
+  gap: 12px; align-items: end;
+}
+.finder-form.size-mode { grid-template-columns: repeat(3, 1fr) auto; }
+.form-group label {
+  display: block; font-size: 11px; font-weight: 600;
+  color: var(--gray-5); text-transform: uppercase;
+  letter-spacing: .07em; margin-bottom: 6px;
+}
+.form-group select, .form-group input {
+  width: 100%;
+  background: var(--gray-8);
+  border: 1px solid var(--gray-7);
+  border-radius: 6px;
+  color: var(--white);
+  padding: 11px 14px;
+  font-family: var(--font-b); font-size: 14px;
+  outline: none;
+  transition: border-color .15s;
+  appearance: none;
+  cursor: pointer;
+}
+.form-group select:focus, .form-group input:focus { border-color: var(--red); }
+
+/* ═══════════════════════════════════════════════════
+   SECTION SHELL
+═══════════════════════════════════════════════════ */
+.section {
+  max-width: 1280px; margin: 0 auto;
+  padding: 64px 32px;
+}
+.section-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+.section-header h2 {
+  font-family: var(--font-d);
+  font-weight: 800; font-size: 36px;
+  letter-spacing: .02em; line-height: 1;
+}
+.section-header h2 span { color: var(--red); }
+.section-header p { color: var(--gray-3); font-size: 14px; margin-top: 6px; }
+.section-header a {
+  font-family: var(--font-d);
+  font-size: 13px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--red); text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   PRODUCT CARDS
+═══════════════════════════════════════════════════ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.product-card {
+  background: var(--gray-9);
+  border: 1px solid var(--gray-8);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  cursor: pointer;
+  position: relative;
+}
+.product-card:hover {
+  border-color: var(--gray-6, #555);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.4);
+}
+.product-badge {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  font-family: var(--font-d);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 3px;
+}
+.badge-hot { background: var(--red); color: var(--white); }
+.badge-new { background: var(--steel); color: var(--white); }
+.badge-sale { background: var(--gold); color: var(--black); }
+
+.product-img {
+  height: 180px;
+  background: var(--gray-8);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.tyre-svg {
+  width: 130px; height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 38%, #2a2a2a, #0d0d0d);
+  border: 18px solid #1a1a1a;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.6), inset 0 0 20px rgba(0,0,0,.8);
+  position: relative;
+}
+.tyre-svg::after {
+  content: 'V';
+  font-family: var(--font-d);
+  font-weight: 900; font-size: 32px;
+  color: var(--red);
+}
+.product-img::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 40px;
+  background: linear-gradient(transparent, var(--gray-9));
+}
+
+.product-body { padding: 16px; }
+.product-size {
+  font-family: var(--font-d);
+  font-weight: 800; font-size: 20px;
+  color: var(--white); letter-spacing: .04em;
+  margin-bottom: 4px;
+}
+.product-vehicle { font-size: 12px; color: var(--gray-5); margin-bottom: 12px; }
+.product-specs {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px;
+}
+.spec-tag {
+  font-size: 11px; font-weight: 500;
+  background: var(--gray-8);
+  border: 1px solid var(--gray-7);
+  color: var(--gray-3);
+  padding: 3px 8px; border-radius: 3px;
+}
+.product-footer {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--gray-8);
+}
+.product-price {
+  font-family: var(--font-d);
+  font-weight: 800; font-size: 22px;
+  color: var(--white);
+}
+.product-price small {
+  display: block; font-family: var(--font-b);
+  font-size: 11px; font-weight: 400;
+  color: var(--gray-5);
+}
+.add-btn {
+  background: var(--red); border: none;
+  color: var(--white); cursor: pointer;
+  width: 36px; height: 36px; border-radius: 6px;
+  font-size: 18px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.add-btn:hover { background: var(--red-d); }
+.star-row {
+  display: flex; gap: 2px; margin-bottom: 10px; align-items: center;
+}
+.star { color: #C8960C; font-size: 13px; }
+.star-count { font-size: 12px; color: var(--gray-5); margin-left: 5px; }
+
+/* ═══════════════════════════════════════════════════
+   CATEGORIES
+═══════════════════════════════════════════════════ */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.cat-card {
+  background: var(--gray-9);
+  border: 1px solid var(--gray-8);
+  border-radius: 10px;
+  padding: 20px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+  text-decoration: none; color: inherit;
+}
+.cat-card:hover {
+  border-color: var(--red);
+  background: rgba(204,0,0,.06);
+}
+.cat-icon {
+  font-size: 28px; margin-bottom: 10px;
+  display: block;
+}
+.cat-name {
+  font-family: var(--font-d);
+  font-weight: 700; font-size: 14px;
+  color: var(--white); letter-spacing: .04em;
+  margin-bottom: 4px;
+}
+.cat-count { font-size: 11px; color: var(--gray-5); }
+
+/* ═══════════════════════════════════════════════════
+   PROMO BANNER
+═══════════════════════════════════════════════════ */
+.promo-strip {
+  background: var(--gray-9);
+  border-top: 1px solid var(--gray-8);
+  border-bottom: 1px solid var(--gray-8);
+}
+.promo-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 48px 32px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.promo-card {
+  border-radius: 12px;
+  padding: 36px 32px;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+}
+.promo-card.red {
+  background: linear-gradient(135deg, var(--red-d) 0%, var(--red) 100%);
+}
+.promo-card.dark {
+  background: linear-gradient(135deg, var(--gray-8) 0%, var(--gray-7) 100%);
+  border: 1px solid var(--gray-6, #555);
+}
+.promo-card::before {
+  content: '';
+  position: absolute; top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+}
+.promo-card::after {
+  content: '';
+  position: absolute; bottom: -20px; right: 20px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.04);
+}
+.promo-tag {
+  font-family: var(--font-d); font-weight: 700;
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 10px; opacity: .8;
+}
+.promo-card h3 {
+  font-family: var(--font-d);
+  font-weight: 900; font-size: 32px;
+  line-height: 1; margin-bottom: 10px;
+}
+.promo-card p { font-size: 14px; opacity: .8; margin-bottom: 20px; }
+.promo-cta {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  padding: 9px 20px; border-radius: 5px;
+  font-family: var(--font-d); font-weight: 700;
+  font-size: 13px; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--white);
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: background .15s;
+}
+.promo-cta:hover { background: rgba(255,255,255,.25); }
+
+/* ═══════════════════════════════════════════════════
+   WHY VERANO
+═══════════════════════════════════════════════════ */
+.why-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.why-card {
+  background: var(--gray-9);
+  border: 1px solid var(--gray-8);
+  border-radius: 10px;
+  padding: 28px 22px;
+  border-top: 3px solid var(--red);
+}
+.why-icon {
+  font-size: 32px; margin-bottom: 16px; display: block;
+}
+.why-title {
+  font-family: var(--font-d);
+  font-weight: 800; font-size: 17px;
+  margin-bottom: 8px; letter-spacing: .03em;
+}
+.why-desc { font-size: 13px; color: var(--gray-3); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════════════
+   SHIPPING BANNER
+═══════════════════════════════════════════════════ */
+.shipping-bar {
+  background: linear-gradient(90deg, #0D0D0D 0%, rgba(204,0,0,.15) 50%, #0D0D0D 100%);
+  border-top: 1px solid var(--gray-8);
+  border-bottom: 1px solid var(--gray-8);
+}
+.shipping-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 24px 32px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.ship-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 0 24px;
+  border-right: 1px solid var(--gray-8);
+}
+.ship-item:first-child { padding-left: 0; }
+.ship-item:last-child { border-right: none; }
+.ship-icon { font-size: 28px; flex-shrink: 0; }
+.ship-title {
+  font-family: var(--font-d);
+  font-weight: 700; font-size: 15px; letter-spacing: .03em;
+  color: var(--white);
+}
+.ship-sub { font-size: 12px; color: var(--gray-5); margin-top: 2px; }
+
+/* ═══════════════════════════════════════════════════
+   EXPERT ADVICE / BLOG
+═══════════════════════════════════════════════════ */
+.blog-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.blog-card {
+  background: var(--gray-9);
+  border: 1px solid var(--gray-8);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.blog-card:hover { border-color: var(--gray-6, #555); }
+.blog-img {
+  height: 160px;
+  background: var(--gray-8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+  position: relative; overflow: hidden;
+}
+.blog-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(204,0,0,.1), transparent);
+}
+.blog-body { padding: 20px; }
+.blog-tag {
+  font-family: var(--font-d); font-size: 11px;
+  font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--red);
+  margin-bottom: 8px; display: block;
+}
+.blog-title {
+  font-family: var(--font-d);
+  font-weight: 700; font-size: 18px;
+  color: var(--white); line-height: 1.2;
+  margin-bottom: 10px;
+}
+.blog-excerpt { font-size: 13px; color: var(--gray-3); line-height: 1.5; }
+.blog-footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--gray-8);
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12px; color: var(--gray-5);
+}
+
+/* ═══════════════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════════════ */
+.reviews-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.review-card {
+  background: var(--gray-9);
+  border: 1px solid var(--gray-8);
+  border-radius: 10px;
+  padding: 24px;
+}
+.review-stars { margin-bottom: 14px; }
+.review-text {
+  font-size: 14px; color: var(--gray-1);
+  line-height: 1.6; margin-bottom: 20px;
+  font-style: italic;
+}
+.review-text::before { content: '"'; color: var(--red); font-size: 24px; line-height: 0; vertical-align: -8px; }
+.reviewer {
+  display: flex; align-items: center; gap: 12px;
+}
+.reviewer-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-d); font-weight: 800;
+  font-size: 16px; color: var(--white); flex-shrink: 0;
+}
+.reviewer-name {
+  font-weight: 600; font-size: 14px; color: var(--white);
+}
+.reviewer-vehicle { font-size: 12px; color: var(--gray-5); }
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+.footer-main {
+  background: var(--gray-9);
+  border-top: 3px solid var(--red);
+  padding: 64px 0 40px;
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 32px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-brand { }
+.footer-logo {
+  font-family: var(--font-d);
+  font-weight: 900; font-size: 26px;
+  letter-spacing: .12em; color: var(--white);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 16px; text-decoration: none;
+}
+.footer-logo span { color: var(--red); }
+.footer-desc { font-size: 13px; color: var(--gray-3); line-height: 1.6; max-width: 280px; }
+.footer-certifications {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;
+}
+.cert-badge {
+  background: var(--gray-8);
+  border: 1px solid var(--gray-7);
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-family: var(--font-d);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .06em; color: var(--gray-3);
+}
+.footer-col h4 {
+  font-family: var(--font-d);
+  font-weight: 700; font-size: 13px;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 18px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a {
+  font-size: 13px; color: var(--gray-3);
+  text-decoration: none; transition: color .12s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1280px; margin: 0 auto;
+  padding: 24px 32px 0;
+  border-top: 1px solid var(--gray-8);
+  margin-top: 40px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  font-size: 12px; color: var(--gray-5);
+}
+.footer-bottom a { color: var(--gray-5); text-decoration: none; }
+.secure-badges { display: flex; gap: 12px; align-items: center; }
+.secure-badge {
+  background: var(--gray-8);
+  border: 1px solid var(--gray-7);
+  padding: 4px 10px; border-radius: 3px;
+  font-size: 11px; color: var(--gray-3);
+  display: flex; align-items: center; gap: 5px;
+}
+
+/* ═══════════════════════════════════════════════════
+   LIVE COUNTDOWN
+═══════════════════════════════════════════════════ */
+.countdown-bar {
+  background: rgba(204,0,0,.1);
+  border: 1px solid rgba(204,0,0,.2);
+  border-radius: 6px;
+  padding: 10px 16px;
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 36px; width: fit-content;
+}
+.countdown-label { font-size: 12px; color: var(--gray-3); }
+.countdown-timer {
+  display: flex; gap: 6px; align-items: center;
+}
+.cd-unit {
+  background: var(--black);
+  border: 1px solid var(--gray-7);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: var(--font-d); font-weight: 800;
+  font-size: 18px; color: var(--red);
+  min-width: 36px; text-align: center;
+}
+.cd-sep { color: var(--red); font-weight: 700; }
+
+/* ═══════════════════════════════════════════════════
+   MODAL — Product Detail
+═══════════════════════════════════════════════════ */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(4px);
+  display: none; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--gray-9);
+  border: 1px solid var(--gray-7);
+  border-radius: 14px;
+  width: 100%; max-width: 680px;
+  max-height: 90vh; overflow-y: auto;
+  position: relative;
+}
+.modal-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--gray-8);
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+.modal-header h3 {
+  font-family: var(--font-d);
+  font-weight: 800; font-size: 24px;
+  letter-spacing: .04em;
+}
+.modal-close {
+  background: var(--gray-8); border: 1px solid var(--gray-7);
+  color: var(--gray-3); width: 36px; height: 36px;
+  border-radius: 50%; cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .12s;
+}
+.modal-close:hover { background: var(--gray-7); color: var(--white); }
+.modal-body { padding: 28px; }
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.modal-specs { display: flex; flex-direction: column; gap: 10px; }
+.spec-row {
+  display: flex; justify-content: space-between;
+  padding: 9px 12px;
+  background: var(--gray-8); border-radius: 5px;
+  font-size: 13px;
+}
+.spec-row span:first-child { color: var(--gray-3); }
+.spec-row span:last-child { color: var(--white); font-weight: 500; }
+.qty-selector {
+  display: flex; align-items: center; gap: 12px;
+  margin: 20px 0;
+}
+.qty-btn {
+  width: 36px; height: 36px;
+  background: var(--gray-8); border: 1px solid var(--gray-7);
+  border-radius: 5px; color: var(--white);
+  font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .12s;
+}
+.qty-btn:hover { background: var(--gray-7); }
+.qty-num {
+  font-family: var(--font-d);
+  font-weight: 800; font-size: 22px;
+  color: var(--white); min-width: 36px; text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════
+   LIVE CHAT BUBBLE
+═══════════════════════════════════════════════════ */
+.chat-bubble {
+  position: fixed; bottom: 28px; right: 28px;
+  z-index: 500;
+  background: var(--red);
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(204,0,0,.4);
+  transition: transform .15s, box-shadow .15s;
+}
+.chat-bubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(204,0,0,.5);
+}
+.chat-bubble .notif {
+  position: absolute; top: 0; right: 0;
+  width: 16px; height: 16px;
+  background: var(--white); border-radius: 50%;
+  border: 2px solid var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 800; color: var(--red);
+}
+
+/* ═══════════════════════════════════════════════════
+   DIVIDER
+═══════════════════════════════════════════════════ */
+.divider { border: none; border-top: 1px solid var(--gray-8); }
+.section-dark { background: var(--gray-9); }
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .categories-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 768px) {
+  .header-inner { padding: 0 16px; gap: 12px; }
+  .header-nav { display: none; }
+  .section { padding: 40px 16px; }
+  .finder-form { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .shipping-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .ship-item { border-right: none; }
+  .promo-inner { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .modal-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 48px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  🚚 Free delivery within Lagos Island &amp; Mainland
+  <span>|</span>
+  ⚡ Same-day dispatch for orders before 12:30 PM
+  <span>|</span>
+  📞 Call us: +234 916 702 7854
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">V</div>
+      VER<span>A</span>NO
+    </a>
+    <div class="header-search">
+      <input type="text" placeholder="Search by tyre size (e.g. 265/65R17) or vehicle…" id="searchInput">
+      <button onclick="handleSearch()">🔍</button>
+    </div>
+    <nav class="header-nav">
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
+      <a href="#advice">Advice</a>
+      <a href="#promotions">Offers</a>
+      <a href="#contact" class="cta">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SUB NAV -->
+<div class="subnav">
+  <div class="subnav-inner">
+    <a href="#" class="active">All Tyres</a>
+    <a href="#">Corolla / Civic</a>
+    <a href="#">Camry / Accord</a>
+    <a href="#">Prado / Hilux</a>
+    <a href="#">BMW / Mercedes</a>
+    <a href="#">SUV / 4x4</a>
+    <a href="#">RAV4 / CRV</a>
+    <a href="#">Run-Flat</a>
+    <a href="#">Promotions 🔥</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+
+      <div class="countdown-bar">
+        <div class="countdown-label">🔥 Flash sale ends in</div>
+        <div class="countdown-timer">
+          <div class="cd-unit" id="cd-h">02</div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit" id="cd-m">47</div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit" id="cd-s">33</div>
+        </div>
+      </div>
+
+      <div class="hero-badge">SONCAP Certified · ADGM UAE · Est. 2026</div>
+      <h1>
+        Built for<br>
+        <em>Nigerian Roads.</em>
+        Trusted by<br>Drivers.
+      </h1>
+      <p>Premium tyres for Toyota, BMW, Honda, Prado and more. Delivered same day across Lagos. Every tyre QR-verified and warranty-backed.</p>
+      <div class="hero-actions">
+        <a href="#finder" class="btn-primary">🔍 Find Your Tyre</a>
+        <a href="#products" class="btn-ghost">View All Sizes →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <div><b>SONCAP Certified</b>Standards-approved for Nigeria</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">📦</div>
+          <div><b>Free Lagos Delivery</b>Same-day before 12:30 PM</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🔏</div>
+          <div><b>QR Authenticated</b>Scan to verify genuine Verano</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-tyre-ring" style="width:440px;height:440px;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+      <div class="hero-tyre-ring" style="width:390px;height:390px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:.8s"></div>
+      <div class="hero-tyre"></div>
+      <div class="hero-specs">
+        <div class="spec-pill">205/55R16<small>Corolla · Civic</small></div>
+        <div class="spec-pill">215/65R16<small>Camry · Accord</small></div>
+        <div class="spec-pill">245/45R18<small>BMW · Accord Sport</small></div>
+        <div class="spec-pill">265/65R17<small>Prado · Hilux</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHIPPING BAR -->
+<div class="shipping-bar">
+  <div class="shipping-inner">
+    <div class="ship-item">
+      <div class="ship-icon">🚚</div>
+      <div>
+        <div class="ship-title">Free Lagos Delivery</div>
+        <div class="ship-sub">Island &amp; Mainland covered</div>
+      </div>
+    </div>
+    <div class="ship-item">
+      <div class="ship-icon">⚡</div>
+      <div>
+        <div class="ship-title">Same-Day Dispatch</div>
+        <div class="ship-sub">Order before 12:30 PM</div>
+      </div>
+    </div>
+    <div class="ship-item">
+      <div class="ship-icon">🔒</div>
+      <div>
+        <div class="ship-title">Secure Payment</div>
+        <div class="ship-sub">SSL encrypted · Bank transfer · POS</div>
+      </div>
+    </div>
+    <div class="ship-item">
+      <div class="ship-icon">✅</div>
+      <div>
+        <div class="ship-title">12-Month Warranty</div>
+        <div class="ship-sub">Every tyre QR-authenticated</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TYRE FINDER -->
+<div class="finder" id="finder">
+  <div class="finder-inner">
+    <h2>Find Your <span>Perfect Tyre</span></h2>
+    <p>Search by vehicle or tyre size — we'll show you exactly what fits.</p>
+
+    <div class="finder-tabs">
+      <button class="finder-tab active" onclick="switchFinder('vehicle',this)">By Vehicle</button>
+      <button class="finder-tab" onclick="switchFinder('size',this)">By Tyre Size</button>
+    </div>
+
+    <div class="finder-form" id="finder-vehicle">
+      <div class="form-group">
+        <label>Make</label>
+        <select onchange="updateModels(this.value)">
+          <option value="">Select Make</option>
+          <option>Toyota</option>
+          <option>Honda</option>
+          <option>BMW</option>
+          <option>Mercedes-Benz</option>
+          <option>Hyundai</option>
+          <option>Kia</option>
+          <option>Lexus</option>
+          <option>Ford</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Model</label>
+        <select id="model-select">
+          <option value="">Select Model</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Year</label>
+        <select>
+          <option>Select Year</option>
+          <option>2024</option><option>2023</option><option>2022</option>
+          <option>2021</option><option>2020</option><option>2019</option>
+          <option>2018</option><option>2017</option><option>2016</option>
+          <option>2015</option><option>2014</option><option>2013</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Trim</label>
+        <select>
+          <option>All Trims</option>
+          <option>Base</option><option>Sport</option><option>XSE</option><option>TRD</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="searchTyres()">Search →</button>
+    </div>
+
+    <div class="finder-form size-mode" id="finder-size" style="display:none">
+      <div class="form-group">
+        <label>Width (e.g. 205)</label>
+        <select>
+          <option>205</option><option>215</option><option>225</option>
+          <option>235</option><option>245</option><option>255</option>
+          <option>265</option><option>275</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Profile (e.g. 55)</label>
+        <select>
+          <option>40</option><option>45</option><option>50</option>
+          <option>55</option><option>60</option><option>65</option><option>70</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Rim (e.g. R16)</label>
+        <select>
+          <option>R14</option><option>R15</option><option>R16</option>
+          <option>R17</option><option>R18</option><option>R19</option><option>R20</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="searchTyres()">Search →</button>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+  <div class="section-header">
+    <div>
+      <h2>Popular <span>Categories</span></h2>
+      <p>Shop by the most searched vehicle types in Lagos</p>
+    </div>
+    <a href="#">View All →</a>
+  </div>
+  <div class="categories-grid">
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🚗</span>
+      <div class="cat-name">Corolla Tyres</div>
+      <div class="cat-count">205/55R16 · In stock</div>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🚙</span>
+      <div class="cat-name">Camry Tyres</div>
+      <div class="cat-count">215/65R16 · In stock</div>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🛻</span>
+      <div class="cat-name">Prado / Hilux</div>
+      <div class="cat-count">265/65R17 · In stock</div>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🏎️</span>
+      <div class="cat-name">BMW / Accord</div>
+      <div class="cat-count">245/45R18 · In stock</div>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🚐</span>
+      <div class="cat-name">SUV / 4x4</div>
+      <div class="cat-count">Multiple sizes</div>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">⭐</span>
+      <div class="cat-name">Best Sellers</div>
+      <div class="cat-count">Top picks this week</div>
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<div class="section-dark">
+<section class="section" id="products">
+  <div class="section-header">
+    <div>
+      <h2>Our <span>Tyre Range</span></h2>
+      <p>SONCAP certified · 12-month warranty · QR authenticated</p>
+    </div>
+    <a href="#">View All →</a>
+  </div>
+  <div class="products-grid" id="products-grid">
+
+    <div class="product-card" onclick="openModal('205/55R16','Toyota Corolla · Honda Civic','₦130,000','54.6','63,542','SONCAP,DOT,ECE','H','Load 91')">
+      <div class="product-badge badge-hot">BEST SELLER</div>
+      <div class="product-img"><div class="tyre-svg"></div></div>
+      <div class="product-body">
+        <div class="product-size">205/55R16</div>
+        <div class="product-vehicle">Toyota Corolla · Honda Civic</div>
+        <div class="star-row">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          <span class="star-count">(127)</span>
+        </div>
+        <div class="product-specs">
+          <span class="spec-tag">H-rated</span>
+          <span class="spec-tag">Tubeless</span>
+          <span class="spec-tag">SONCAP ✓</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">₦130,000<small>per tyre · incl VAT</small></div>
+          <button class="add-btn" onclick="event.stopPropagation();addToCart('205/55R16')">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('215/65R16','Toyota Camry · Honda Accord','₦150,000','51.9','69,861','SONCAP,DOT,ECE','H','Load 98')">
+      <div class="product-badge badge-new">NEW IN</div>
+      <div class="product-img"><div class="tyre-svg"></div></div>
+      <div class="product-body">
+        <div class="product-size">215/65R16</div>
+        <div class="product-vehicle">Toyota Camry · Honda Accord</div>
+        <div class="star-row">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          <span class="star-count">(84)</span>
+        </div>
+        <div class="product-specs">
+          <span class="spec-tag">H-rated</span>
+          <span class="spec-tag">Tubeless</span>
+          <span class="spec-tag">SONCAP ✓</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">₦150,000<small>per tyre · incl VAT</small></div>
+          <button class="add-btn" onclick="event.stopPropagation();addToCart('215/65R16')">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('245/45R18','BMW 3-Series · Honda Accord Sport','₦176,500','55.6','88,608','SONCAP,DOT,ECE','V','Load 96')">
+      <div class="product-img"><div class="tyre-svg"></div></div>
+      <div class="product-body">
+        <div class="product-size">245/45R18</div>
+        <div class="product-vehicle">BMW 3-Series · Accord Sport</div>
+        <div class="star-row">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="color:var(--gray-7)">★</span>
+          <span class="star-count">(52)</span>
+        </div>
+        <div class="product-specs">
+          <span class="spec-tag">V-rated</span>
+          <span class="spec-tag">UHP</span>
+          <span class="spec-tag">SONCAP ✓</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">₦176,500<small>per tyre · incl VAT</small></div>
+          <button class="add-btn" onclick="event.stopPropagation();addToCart('245/45R18')">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('265/65R17','Land Cruiser Prado · Toyota Hilux','₦176,500','36.8','56,449','SONCAP,DOT,ECE','H','Load 112')">
+      <div class="product-badge badge-sale">FLEET DEAL</div>
+      <div class="product-img"><div class="tyre-svg"></div></div>
+      <div class="product-body">
+        <div class="product-size">265/65R17</div>
+        <div class="product-vehicle">Land Cruiser Prado · Toyota Hilux</div>
+        <div class="star-row">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          <span class="star-count">(203)</span>
+        </div>
+        <div class="product-specs">
+          <span class="spec-tag">H-rated</span>
+          <span class="spec-tag">AT/SUV</span>
+          <span class="spec-tag">SONCAP ✓</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">₦176,500<small>per tyre · incl VAT</small></div>
+          <button class="add-btn" onclick="event.stopPropagation();addToCart('265/65R17')">+</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- PROMOS -->
+<section class="section" id="promotions">
+  <div class="section-header">
+    <div>
+      <h2>Current <span>Promotions</span></h2>
+      <p>Limited-time offers — while stock lasts</p>
+    </div>
+  </div>
+  <div class="promo-inner" style="padding:0;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div class="promo-card red">
+      <div class="promo-tag">🔥 Flash Offer</div>
+      <h3>Buy 4 Tyres,<br>Get Free Valves</h3>
+      <p>Branded Verano Red valve set with every 4-tyre purchase. Limited stock.</p>
+      <a href="#" class="promo-cta">Shop Now →</a>
+    </div>
+    <div class="promo-card dark">
+      <div class="promo-tag">🚛 Fleet Pricing</div>
+      <h3>10+ Tyres?<br>Call for Rate</h3>
+      <p>Special pricing for fleet operators, workshops and transport companies in Lagos.</p>
+      <a href="#contact" class="promo-cta">Get Fleet Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VERANO -->
+<div class="section-dark">
+<section class="section">
+  <div class="section-header">
+    <div>
+      <h2>Why Choose <span>Verano</span></h2>
+      <p>Built for Lagos roads. Backed by international quality standards.</p>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">🛡️</span>
+      <div class="why-title">SONCAP Certified</div>
+      <div class="why-desc">Every tyre meets Nigeria's Standards Organisation requirements. No grey-market risk for you or your customers.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📱</span>
+      <div class="why-title">QR Anti-Counterfeit</div>
+      <div class="why-desc">Scan the QR on every tyre to verify authenticity instantly. If it's Verano, it's genuine — no imitations.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🔧</span>
+      <div class="why-title">12-Month Warranty</div>
+      <div class="why-desc">Manufacturing defects covered for 12 months from purchase. Real accountability — not a sticker promise.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🚚</span>
+      <div class="why-title">Same-Day Lagos</div>
+      <div class="why-desc">Order before 12:30 PM and your tyres dispatch the same day. Island and Mainland covered. No courier delays.</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- EXPERT ADVICE / BLOG -->
+<section class="section" id="advice">
+  <div class="section-header">
+    <div>
+      <h2>Expert <span>Tyre Advice</span></h2>
+      <p>From Nigeria's roads to your garage — practical guidance from tyre specialists</p>
+    </div>
+    <a href="#">All Articles →</a>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-img">🛞</div>
+      <div class="blog-body">
+        <span class="blog-tag">Buying Guide</span>
+        <div class="blog-title">How to Choose the Right Tyre for Your Prado</div>
+        <div class="blog-excerpt">The 265/65R17 is the standard fitment, but not all brands perform equally on Lagos-Ibadan expressway conditions. Here's what to look for.</div>
+      </div>
+      <div class="blog-footer">
+        <span>5 min read</span><span>Tyre Specialist</span>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img">⚠️</div>
+      <div class="blog-body">
+        <span class="blog-tag">Safety</span>
+        <div class="blog-title">Tokunbo vs New Tyres — The Hidden Cost</div>
+        <div class="blog-excerpt">A used Bridgestone at ₦80,000 looks like a saving. But what happens when it fails at 2am on the Lekki-Epe expressway? A frank comparison.</div>
+      </div>
+      <div class="blog-footer">
+        <span>7 min read</span><span>Road Safety Expert</span>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img">🔍</div>
+      <div class="blog-body">
+        <span class="blog-tag">Maintenance</span>
+        <div class="blog-title">How to Spot a Fake Tyre in Ladipo Market</div>
+        <div class="blog-excerpt">Counterfeit tyres look identical to genuine ones. We show you the seven signs that separate a real Verano from a fake — and why QR verification matters.</div>
+      </div>
+      <div class="blog-footer">
+        <span>4 min read</span><span>Quality Team</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<div class="section-dark">
+<section class="section">
+  <div class="section-header">
+    <div>
+      <h2>What <span>Drivers Say</span></h2>
+      <p>Real customers. Real roads. Real Lagos.</p>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="review-text">Put four 265/65R17s on my Prado. Three months in — brilliant. No vibration, good grip on the wet Lekki roads. The red valves are a nice touch too.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar">AO</div>
+        <div>
+          <div class="reviewer-name">Adebayo O.</div>
+          <div class="reviewer-vehicle">Toyota Land Cruiser Prado · Victoria Island</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="review-text">Ordered at 10am, delivered by 2pm same day. The QR verification gave me confidence I wasn't buying a fake. My Corolla feels like new.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar">CF</div>
+        <div>
+          <div class="reviewer-name">Chidinma F.</div>
+          <div class="reviewer-vehicle">Toyota Corolla · Surulere</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="color:var(--gray-7)">★</span></div>
+      <div class="review-text">Bought the 245/45R18 for my BMW. Handles well, quiet ride. Price is fair compared to what I was paying for Dunlop. Will buy again.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar">EK</div>
+        <div>
+          <div class="reviewer-name">Emeka K.</div>
+          <div class="reviewer-vehicle">BMW 3-Series F30 · Ikeja GRA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-main" id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">
+        <div class="logo-mark" style="width:30px;height:30px;font-size:14px">V</div>
+        VER<span>A</span>NO
+      </a>
+      <p class="footer-desc">Premium tyres for Nigeria's roads. Imported through Portside Auto Trading FZE (ADGM, UAE) and distributed by Verano Tyres Nigeria Ltd, Lagos.</p>
+      <div class="footer-certifications">
+        <span class="cert-badge">SONCAP ✓</span>
+        <span class="cert-badge">DOT ✓</span>
+        <span class="cert-badge">ECE ✓</span>
+        <span class="cert-badge">QR Verified</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#">205/55R16 — Corolla</a></li>
+        <li><a href="#">215/65R16 — Camry</a></li>
+        <li><a href="#">245/45R18 — BMW</a></li>
+        <li><a href="#">265/65R17 — Prado</a></li>
+        <li><a href="#">Fleet Enquiries</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Tyre Finder</a></li>
+        <li><a href="#">Fitting Guide</a></li>
+        <li><a href="#">Warranty Claims</a></li>
+        <li><a href="#">QR Verification</a></li>
+        <li><a href="#">Expert Advice</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+2349167027854">📞 +234 916 702 7854</a></li>
+        <li><a href="#">📍 Lagos, Nigeria</a></li>
+        <li><a href="#">📧 info@veranotypres.ng</a></li>
+        <li><a href="#">💬 WhatsApp Us</a></li>
+        <li><a href="#">🕐 Mon–Sat 8am–6pm</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-inner footer-bottom">
+    <div>© 2026 Verano Tyres Nigeria Ltd · All rights reserved · <a href="#">Privacy Policy</a> · <a href="#">Terms</a></div>
+    <div class="secure-badges">
+      <div class="secure-badge">🔒 SSL Secure</div>
+      <div class="secure-badge">🏦 Bank Transfer</div>
+      <div class="secure-badge">📱 POS on Delivery</div>
+    </div>
+  </div>
+</footer>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-size">265/65R17</h3>
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-grid">
+        <div>
+          <div style="height:200px;background:var(--gray-8);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+            <div class="tyre-svg" style="width:150px;height:150px;border-width:22px"></div>
+          </div>
+          <div class="modal-specs" id="modal-specs"></div>
+        </div>
+        <div>
+          <div id="modal-vehicle" style="font-size:14px;color:var(--gray-3);margin-bottom:8px"></div>
+          <div id="modal-price" style="font-family:var(--font-d);font-weight:800;font-size:34px;color:var(--white);margin-bottom:4px"></div>
+          <div style="font-size:12px;color:var(--gray-5);margin-bottom:20px">per tyre · includes VAT · SONCAP certified</div>
+
+          <div style="background:var(--green-l,rgba(14,138,90,.1));border:1px solid rgba(14,138,90,.3);border-radius:6px;padding:12px 14px;margin-bottom:20px">
+            <div style="font-size:12px;color:#4CE0A0;font-weight:600;margin-bottom:4px">⚡ Same-day delivery available</div>
+            <div style="font-size:12px;color:var(--gray-3)">Order before 12:30 PM · Lagos Island &amp; Mainland</div>
+          </div>
+
+          <div style="font-size:13px;color:var(--gray-3);margin-bottom:8px">Quantity</div>
+          <div class="qty-selector">
+            <button class="qty-btn" onclick="changeQty(-1)">−</button>
+            <div class="qty-num" id="modal-qty">1</div>
+            <button class="qty-btn" onclick="changeQty(1)">+</button>
+            <div style="font-size:13px;color:var(--gray-5)">tyres</div>
+          </div>
+          <div style="font-size:13px;color:var(--gray-5);margin-bottom:20px">Total: <span id="modal-total" style="color:var(--white);font-weight:600"></span></div>
+
+          <button class="btn-primary" style="width:100%;justify-content:center;margin-bottom:12px" onclick="orderNow()">
+            🛒 Add to Order
+          </button>
+          <button class="btn-ghost" style="width:100%;justify-content:center" onclick="whatsappOrder()">
+            💬 Order via WhatsApp
+          </button>
+
+          <div style="margin-top:20px;display:flex;gap:12px">
+            <div style="font-size:12px;color:var(--gray-5);display:flex;align-items:center;gap:5px">🛡️ 12-month warranty</div>
+            <div style="font-size:12px;color:var(--gray-5);display:flex;align-items:center;gap:5px">📱 QR verified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE CHAT BUBBLE -->
+<div class="chat-bubble" onclick="openWhatsApp()" title="Chat with us on WhatsApp">
+  💬
+  <div class="notif">1</div>
+</div>
+
+<script>
+/* ── COUNTDOWN TIMER ── */
+let secs = 2 * 3600 + 47 * 60 + 33;
+function tick(){
+  if(secs<=0){secs=6*3600;} secs--;
+  const h=Math.floor(secs/3600);
+  const m=Math.floor((secs%3600)/60);
+  const s=secs%60;
+  document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+}
+setInterval(tick, 1000);
+
+/* ── FINDER TABS ── */
+function switchFinder(mode, btn){
+  document.querySelectorAll('.finder-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('finder-vehicle').style.display = mode==='vehicle'?'grid':'none';
+  document.getElementById('finder-size').style.display    = mode==='size'?'grid':'none';
+}
+
+/* ── VEHICLE MODELS ── */
+const models = {
+  Toyota:['Corolla','Camry','Prado','Hilux','RAV4','Highlander','Yaris','Venza'],
+  Honda:['Accord','Civic','CRV','Pilot','HRV'],
+  BMW:['3-Series','5-Series','X3','X5','7-Series'],
+  'Mercedes-Benz':['C-Class','E-Class','GLE','GLC','S-Class'],
+  Hyundai:['Sonata','Elantra','Tucson','Santa Fe'],
+  Kia:['Cerato','Sorento','Sportage','Carnival'],
+  Lexus:['RX330','RX350','ES300','IS250','GX460'],
+  Ford:['Explorer','Edge','Ranger','Escape'],
+};
+function updateModels(make){
+  const sel = document.getElementById('model-select');
+  sel.innerHTML = '<option>Select Model</option>';
+  (models[make]||[]).forEach(m=>{
+    sel.innerHTML += `<option>${m}</option>`;
+  });
+}
+function searchTyres(){
+  const grid = document.getElementById('products-grid');
+  grid.style.opacity='.4';
+  grid.style.transition='opacity .3s';
+  setTimeout(()=>{ grid.style.opacity='1'; },700);
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+function handleSearch(){
+  const q = document.getElementById('searchInput').value.trim();
+  if(q) searchTyres();
+}
+
+/* ── MODAL ── */
+let currentPrice = 0, currentQty = 1, currentSize = '';
+function openModal(size, vehicle, price, margin, vtnProfit, certs, speed, load){
+  currentSize = size;
+  currentPrice = parseInt(price.replace(/[₦,]/g,''));
+  currentQty = 1;
+  document.getElementById('modal-size').textContent = 'Verano ' + size;
+  document.getElementById('modal-vehicle').textContent = vehicle;
+  document.getElementById('modal-price').textContent = price;
+  document.getElementById('modal-qty').textContent = 1;
+  document.getElementById('modal-total').textContent = price;
+  document.getElementById('modal-specs').innerHTML = `
+    <div class="spec-row"><span>Size</span><span>${size}</span></div>
+    <div class="spec-row"><span>Speed rating</span><span>${speed}-rated</span></div>
+    <div class="spec-row"><span>Load index</span><span>${load}</span></div>
+    <div class="spec-row"><span>Construction</span><span>Radial tubeless</span></div>
+    <div class="spec-row"><span>Certifications</span><span>${certs}</span></div>
+    <div class="spec-row"><span>Warranty</span><span>12 months</span></div>
+    <div class="spec-row"><span>QR verified</span><span>Yes — scan on arrival</span></div>
+  `;
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(e){
+  if(e.target.id==='modal') document.getElementById('modal').classList.remove('open');
+}
+function changeQty(d){
+  currentQty = Math.max(1, currentQty + d);
+  document.getElementById('modal-qty').textContent = currentQty;
+  const total = (currentPrice * currentQty).toLocaleString();
+  document.getElementById('modal-total').textContent = '₦' + total;
+}
+function orderNow(){
+  alert(`Order placed: ${currentQty} × Verano ${currentSize}\nOur team will confirm via WhatsApp within 30 minutes.`);
+  document.getElementById('modal').classList.remove('open');
+}
+function whatsappOrder(){
+  const msg = encodeURIComponent(`Hi Verano! I'd like to order ${currentQty} × ${currentSize} tyres. Please confirm availability and delivery time. Thank you.`);
+  window.open(`https://wa.me/2349167027854?text=${msg}`, '_blank');
+}
+function openWhatsApp(){
+  window.open('https://wa.me/2349167027854?text=Hi+Verano+Tyres!+I+need+help+finding+the+right+tyre.', '_blank');
+}
+
+/* ── CART ── */
+let cart = {};
+function addToCart(size){
+  cart[size] = (cart[size]||0) + 1;
+  showToast(`✅ ${size} added to order`);
+}
+function showToast(msg){
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#1C1C1C;border:1px solid #333;color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;z-index:9999;font-family:Barlow,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.4);transition:opacity .3s';
+  document.body.appendChild(t);
+  setTimeout(()=>{ t.style.opacity='0'; setTimeout(()=>t.remove(), 300); }, 2200);
+}
+
+/* ── SEARCH INPUT ENTER KEY ── */
+document.getElementById('searchInput').addEventListener('keydown', e => {
+  if(e.key === 'Enter') handleSearch();
+});
+</script>
+</body>
+</html>

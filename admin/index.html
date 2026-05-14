@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verano Admin — Operations Centre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0E0E0E; color: #FFF; font-family: 'Barlow', sans-serif; padding: 24px; }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; letter-spacing: 0.1em; margin-bottom: 4px; }
+    h1 span { color: #CC0000; }
+    .sub { color: #888; font-size: 12px; margin-bottom: 24px; border-bottom: 1px solid #333; padding-bottom: 12px; }
+    .login-container { max-width: 400px; margin: 100px auto; background: #181818; border: 1px solid #333; border-radius: 12px; padding: 32px; text-align: center; }
+    .login-container input { width: 100%; background: #242424; border: 1px solid #555; border-radius: 6px; color: white; padding: 12px; margin: 12px 0; font-size: 16px; }
+    .login-container button { background: #CC0000; color: white; border: none; padding: 12px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 16px; }
+    .login-container button:hover { background: #990000; }
+    .card { background: #181818; border: 1px solid #333; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+    .card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; margin-bottom: 16px; color: #CCC; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .stat-box { background: #242424; border-radius: 8px; padding: 14px; text-align: center; }
+    .stat-value { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 800; }
+    .stat-value.green { color: #4CE0A0; }
+    .btn { background: #CC0000; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; margin-right: 8px; }
+    .btn-secondary { background: #333; }
+    .hidden { display: none; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #333; }
+    th { color: #888; }
+    .error-msg { color: #FF8080; margin-top: 8px; font-size: 12px; }
+  </style>
+</head>
+<body>
 
+<!-- LOGIN SECTION -->
+<div id="loginSection" style="display: block;">
+  <div class="login-container">
+    <h1>VER<span>A</span>NO</h1>
+    <p style="color:#888; margin: 16px 0;">Admin Access</p>
+    <input type="password" id="adminPassword" placeholder="Enter password">
+    <button onclick="verifyPassword()">Login</button>
+    <div id="loginError" class="error-msg"></div>
+  </div>
+</div>
+
+<!-- ADMIN SECTION (Hidden until login) -->
+<div id="adminSection" style="display: none;">
+  <div class="container">
+    <h1>VER<span>A</span>NO <span style="font-size:14px; color:#888;">Admin Operations Centre</span></h1>
+    <div class="sub">Live Data from Google Sheet · Inventory Management</div>
+
+    <div class="grid-2">
+      <div class="stat-box"><div class="stat-value" id="totalTyres">—</div><div class="stat-value green" style="font-size:14px;">Total SKUs</div></div>
+      <div class="stat-box"><div class="stat-value" id="totalValue">—</div><div class="stat-value green" style="font-size:14px;">Total Inventory Value</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📦 Current Inventory (Live from Google Sheet)</div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr><th>Size</th><th>Vehicle</th><th>Retail Price</th><th>Dealer Price</th><th>Stock</th></tr>
+          </thead>
+          <tbody id="inventoryBody">
+            <tr><td colspan="5">Loading inventory...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-secondary" onclick="loadInventory()" style="margin-top:16px;">🔄 Refresh from Sheet</button>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💰 Margin Calculator</div>
+      <div class="grid-2">
+        <input type="text" id="calcSize" placeholder="Size (e.g., 205/55R16)" style="background:#242424; border:1px solid #555; border-radius:6px; color:white; padding:8px;">
+        <input type="number" id="calcRetail" placeholder="Retail Price (₦)" style="background:#242424; border:1px solid #555; border-radius:6px; color:white; padding:8px;">
+        <input type="number" id="calcDealer" placeholder="Dealer Price (₦)" style="background:#242424; border:1px solid #555; border-radius:6px; color:white; padding:8px;">
+        <button class="btn" onclick="calculateMargin()">Calculate Margin</button>
+      </div>
+      <div id="marginResult" style="margin-top:16px; padding:12px; background:#242424; border-radius:6px;"></div>
+    </div>
+
+    <div class="footer" style="margin-top:24px; text-align:center; font-size:10px; color:#666;">Verano Admin · Portside Auto Trading FZE</div>
+  </div>
+</div>
+
+<script>
+  // CHANGE THIS PASSWORD TO WHATEVER YOU WANT
+  const CORRECT_PASSWORD = 'verano2026';
+  
+  // Your Google Sheet CSV link
+  const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVmTDw-sHiVMxSUbJFqUcS-Q9ftXiSKx2V5Ol5jPTktHyVTFaj5xvuE9PTjBym9QQ8Dp4j3uiEwXXr/pub?output=csv';
+
+  function verifyPassword() {
+    const enteredPassword = document.getElementById('adminPassword').value;
+    const errorDiv = document.getElementById('loginError');
+    
+    if (enteredPassword === CORRECT_PASSWORD) {
+      // Hide login, show admin section
+      document.getElementById('loginSection').style.display = 'none';
+      document.getElementById('adminSection').style.display = 'block';
+      loadInventory(); // Load data after login
+    } else {
+      errorDiv.innerHTML = 'Incorrect password. Please try again.';
+    }
+  }
+
+  async function loadInventory() {
+    const tbody = document.getElementById('inventoryBody');
+    tbody.innerHTML = '<tr><td colspan="5">Loading inventory from Google Sheet...</td></tr>';
+    
+    try {
+      const response = await fetch(CSV_URL + '?t=' + new Date().getTime());
+      const csvText = await response.text();
+      
+      // Parse CSV
+      const rows = csvText.trim().split('\n');
+      const headers = rows[0].split(',').map(h => h.trim().replace(/"/g, ''));
+      
+      const products = [];
+      for (let i = 1; i < rows.length; i++) {
+        const values = rows[i].split(',').map(v => v.trim().replace(/"/g, ''));
+        if (values.length >= 5 && values[0]) {
+          const product = {};
+          headers.forEach((h, idx) => { product[h] = values[idx]; });
+          products.push(product);
+        }
+      }
+      
+      if (products.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5">No products found. Check your Google Sheet.</td></tr>';
+        return;
+      }
+      
+      // Update summary stats
+      document.getElementById('totalTyres').innerText = products.length;
+      const totalValue = products.reduce((sum, p) => sum + (parseInt(p.price) || 0), 0);
+      document.getElementById('totalValue').innerText = '₦' + totalValue.toLocaleString();
+      
+      // Render table
+      tbody.innerHTML = products.map(p => `
+        <tr>
+          <td>${p.size || '-'}</td>
+          <td>${p.vehicle || '-'}</td>
+          <td>₦${parseInt(p.price || 0).toLocaleString()}</td>
+          <td>₦${parseInt(p.dealer_price || 0).toLocaleString()}</td>
+          <td style="background:${p.stock_status === 'in_stock' ? 'rgba(14,138,90,0.1)' : 'rgba(204,0,0,0.1)'}">${p.stock_status === 'in_stock' ? '✓ In Stock' : '✗ Out of Stock'}</td>
+        </tr>
+      `).join('');
+      
+    } catch (error) {
+      console.error('Error:', error);
+      tbody.innerHTML = '<tr><td colspan="5">⚠️ Error loading data. Check CSV link or network.</td></tr>';
+    }
+  }
+
+  function calculateMargin() {
+    const size = document.getElementById('calcSize').value;
+    const retail = parseFloat(document.getElementById('calcRetail').value);
+    const dealer = parseFloat(document.getElementById('calcDealer').value);
+    
+    if (!retail || !dealer) {
+      document.getElementById('marginResult').innerHTML = '<span style="color:#FF8080;">Please enter both retail and dealer prices.</span>';
+      return;
+    }
+    
+    const dealerMargin = ((retail - dealer) / retail * 100).toFixed(1);
+    const vtnProfit = dealer - (dealer * 0.3);
+    document.getElementById('marginResult').innerHTML = `
+      <strong>${size || 'Selected tyre'}</strong><br>
+      Retail: ₦${retail.toLocaleString()} | Dealer buys at: ₦${dealer.toLocaleString()}<br>
+      Dealer Margin: ${dealerMargin}% (₦${(retail - dealer).toLocaleString()})<br>
+      Estimated VTN Profit after tax: ₦${vtnProfit.toLocaleString()}
+    `;
+  }
+</script>
+</body>
+</html>
